@@ -26,19 +26,19 @@ def objective(individual, target):
 
 custom_objective = wrapped_partial(objective, target=target)
 
+if __name__ == "__main__":
+    """Parameters"""
+    parameters = {}
+    keys       = range(len(target))
+    for k in keys:
+        parameters[k] = [string.printable[x] for x in range(len(string.printable))]
 
-"""Parameters"""
-parameters = {}
-keys       = range(len(target))
-for k in keys:
-    parameters[k] = [string.printable[x] for x in range(len(string.printable))]
+    population_size = 75
+    num_generations = 1000
+    mutate_chance = .75/len(target)
+    retain = 0.15
+    random_select = 0.05
 
-population_size = 75
-num_generations = 1000
-mutate_chance = .75/len(target)
-retain = 0.15
-random_select = 0.05
-
-ga = GeneticAlgorithm(parameters, population_size, num_generations, mutate_chance, retain, random_select)
-ga.initialize()
-ga.simulate(custom_objective)
+    ga = GeneticAlgorithm(parameters, population_size, num_generations, mutate_chance, retain, random_select)
+    ga.initialize()
+    ga.simulate(custom_objective)
