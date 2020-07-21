@@ -9,7 +9,7 @@ from ga import GeneticAlgorithm
 
 
 
-target = "Hello World!"
+target = "Hello, World!"
 
 """Create custom objective"""
 def wrapped_partial(func, *args, **kwargs):
