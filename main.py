@@ -34,7 +34,7 @@ if __name__ == "__main__":
         parameters[k] = [string.printable[x] for x in range(len(string.printable))]
 
     population_size = 75
-    num_generations = 1000
+    num_generations = 10000
     mutate_chance = .75/len(target)
     retain = 0.15
     random_select = 0.05
